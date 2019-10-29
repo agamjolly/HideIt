@@ -1,0 +1,35 @@
+{
+  "name": "HideIt - Hide Your Reddit Username!",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "A small Chrome extension that hides your Reddit username, particularly helpful in a public setting.",
+  "homepage_url": "http://www.agamjolly.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "persistent": false
+  },
+  "page_action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "A small Chrome extension that hides your Reddit username, particularly helpful in a public setting.",
+    "default_popup": "src/page_action/page_action.html"
+  },
+  "permissions": [
+    "contentSettings",
+    "https://www.reddit.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.reddit.com/*"
+      ],
+      "js": [
+        "src/content_script.js"
+      ]
+    }
+  ]
+}
